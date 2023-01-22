@@ -38,16 +38,17 @@ public class Domaci22 {
 
     @Test
     public void verifyLoginPagesUrl() {
+
         String actualURL = driver.getCurrentUrl();
         String expectedURL = "https://vue-demo.daniel-avellaneda.com/login";
         Assert.assertEquals(actualURL, expectedURL);
-        WebElement emailInscription = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div[2]/div/div/div[3]/span/form/div/div[1]/span/div/div/div[1]/div/label"));
-        String actualEmailInscritpion = emailInscription.getText();
-        String expectedEmailInscription = "E-mail";
+        WebElement emailInscription = driver.findElement(By.id("email"));
+        String actualEmailInscritpion = emailInscription.getAttribute("type");
+        String expectedEmailInscription = "email";
         Assert.assertEquals(actualEmailInscritpion, expectedEmailInscription);
-        WebElement passwordInscription = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div[2]/div/div/div[3]/span/form/div/div[2]/span/div/div/div[1]/div/label"));
-        String actualPasswordInscription = passwordInscription.getText();
-        String expectedPasswordInscription = "Password";
+        WebElement passwordInscription = driver.findElement(By.id("password"));
+        String actualPasswordInscription = passwordInscription.getAttribute("type");
+        String expectedPasswordInscription = "password";
         Assert.assertEquals(actualPasswordInscription, expectedPasswordInscription);
     }
 
